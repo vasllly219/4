@@ -105,7 +105,7 @@ function registration($login, $password){
 
 function setUser($login, $password){//FIXME
     $hash = hashPassword($login, $password);
-    $pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "neto0904");
+    $pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "");
     $sql = "INSERT INTO user (id, login, password) VALUES (null, :login, :password)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['login' => $login, 'password' => $hash]);
