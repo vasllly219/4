@@ -1,6 +1,6 @@
 <?php
 $description = isset($_POST["description"]) ? (string)$_POST["description"] : '';
-$pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "neto0904");
+$pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "");
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $description !== '' && $action !== 'edit'){
     $sql = "INSERT INTO tasks (id, description, is_done, date_added) VALUES (null, ?, 0, NOW())";
