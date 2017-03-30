@@ -53,7 +53,7 @@ function auth($login, $password)
 
 function getUser($login)
 {
-    $pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "neto0904");
+    $pdo = new PDO("mysql:host=127.0.0.1;dbname=ganja;charset=utf8", "ganja", "");
     $sql = "SELECT * FROM user";
     foreach ($pdo->query($sql) as $row){
         if ($row['login'] === $login){
